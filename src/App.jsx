@@ -31,14 +31,15 @@ export default function App() {
   );
 
   return (
-    <div id="appBase">
+    <div className="flex min-h-screen items-center justify-center gap-3">
       <input
+        className="bg-gray-500 text-white"
         type="text"
         value={amount}
         onChange={(e) => setAmount(Number(e.target.value))}
-        disabled={isLoading}
       />
       <select
+        className="bg-gray-500 text-white"
         value={fromCurrency}
         onChange={(e) => setFromCurrency(e.target.value)}
         disabled={isLoading}
@@ -48,6 +49,7 @@ export default function App() {
         <option value="USD">USD</option>
       </select>
       <select
+        className="bg-gray-500 text-white"
         value={toCurrency}
         onChange={(e) => setToCurrency(e.target.value)}
         disabled={isLoading}
@@ -56,7 +58,7 @@ export default function App() {
         <option value="EUR">EUR</option>
         <option value="USD">USD</option>
       </select>
-      <p>
+      <p className="text-center text-blue-200">
         {isLoading && "Fetching api..."}
         {!isLoading && `${converted} ${toCurrency}`}
       </p>
